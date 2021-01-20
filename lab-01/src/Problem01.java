@@ -8,13 +8,13 @@ public class Problem01 {
     static final int SOUTH = 2;
     static final int WEST = 3;
 
-    static String penUpCommand = "PenUp";
-    static String penDownCommand = "PenDown";
-    static String turnRightCommand = "TurnRight";
-    static String turnLeftCommand = "TurnLeft";
-    static String moveCommand = "Move";
-    static String printCommand = "Print";
-    static String exitCommand = "Exit";
+    static String penUpCommand = "penup";
+    static String penDownCommand = "pendown";
+    static String turnRightCommand = "turnright";
+    static String turnLeftCommand = "turnleft";
+    static String moveCommand = "move";
+    static String printCommand = "print";
+    static String exitCommand = "exit";
 
     static char[][] canvas = new char[CANVAS_SIZE][CANVAS_SIZE];
     static int turtleRow = 0;
@@ -24,27 +24,30 @@ public class Problem01 {
     static int steps = 0;
 
     public static void main(String[] args) {
+        try{
+            run();
+        } catch (RuntimeException e){
+            System.out.println("Your problem has a problem:");
+            System.out.println("\t"+e.getMessage());
+        }
+
+    }
+
+    private static void run() {
         Scanner inp = new Scanner(System.in);
 
         init();
 
         while (true){
-            String s = inp.next();
+            String s = inp.next().toLowerCase();
             if (s.equals(penUpCommand)){
-                turtleIsPenDown = false;
+                penUp();
             } else if (s.equals(penDownCommand)){
-                turtleIsPenDown = true;
-                canvas[turtleRow][turtleCol] = '*';
+                penDown();
             } else if (s.equals(turnRightCommand)){
-                turtleDir++;
-                if (turtleDir == 4){
-                    turtleDir = 0;
-                }
+                turnRight();
             } else if (s.equals(turnLeftCommand)){
-                turtleDir--;
-                if (turtleDir == -1){
-                    turtleDir = 3;
-                }
+                turnLeft();
             } else if (s.equals(moveCommand)){
                 steps = inp.nextInt();
                 moveTurtle(steps-1);
@@ -53,7 +56,32 @@ public class Problem01 {
                 printCanvas();
             } else if (s.equals(exitCommand)){
                 break;
+            } else {
+                System.out.println("Incorrect command!");
             }
+        }
+    }
+
+    private static void penUp() {
+        turtleIsPenDown = false;
+    }
+
+    private static void penDown() {
+        turtleIsPenDown = true;
+        canvas[turtleRow][turtleCol] = '*';
+    }
+
+    private static void turnRight() {
+        turtleDir++;
+        if (turtleDir == 4){
+            turtleDir = 0;
+        }
+    }
+
+    private static void turnLeft() {
+        turtleDir--;
+        if (turtleDir == -1){
+            turtleDir = 3;
         }
     }
 
@@ -76,15 +104,7 @@ public class Problem01 {
 
     static void moveTurtle(int nSteps){
 
-        if (turtleDir == NORTH && turtleRow - nSteps < 0){
-            System.out.println("Incorrect number of moves!");
-        } else if (turtleDir == SOUTH && turtleRow + nSteps >= CANVAS_SIZE){
-            System.out.println("Incorrect number of moves!");
-        } else if (turtleDir == EAST && turtleCol + nSteps >= CANVAS_SIZE){
-            System.out.println("Incorrect number of moves!");
-        } else if (turtleDir == WEST && turtleCol - nSteps < 0){
-            System.out.println("Incorrect number of moves!");
-        } else {
+        if (isOutOfCanvas(nSteps)) {
             for (int i = 0; i < nSteps; i++){
                 if (turtleDir == NORTH){
                     turtleRow--;
@@ -99,6 +119,22 @@ public class Problem01 {
                     canvas[turtleRow][turtleCol] = '*';
                 }
             }
+        } else {
+            System.out.println("Incorrect number of moves!");
+        }
+    }
+    
+    private static boolean isOutOfCanvas(int nSteps){
+        if (turtleDir == NORTH && turtleRow - nSteps < 0){
+            return false;
+        } else if (turtleDir == SOUTH && turtleRow + nSteps >= CANVAS_SIZE){
+            return false;
+        } else if (turtleDir == EAST && turtleCol + nSteps >= CANVAS_SIZE){
+            return false;
+        } else if (turtleDir == WEST && turtleCol - nSteps < 0){
+            return false;
+        } else {
+            return true;
         }
     }
 }
