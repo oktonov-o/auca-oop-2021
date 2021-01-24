@@ -34,6 +34,7 @@ public class Main {
                     ans.append(alphabet[j]);
                 }
             }
+
             System.out.println(ans);
         }
     }
