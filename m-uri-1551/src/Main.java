@@ -30,7 +30,6 @@ public class Main {
             } else {
                 System.out.println("frase mal elaborada");
             }
-            System.out.println(sum);
         }
     }
 }
