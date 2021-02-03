@@ -12,7 +12,6 @@ public class Main {
                 String s = inp.next();
                 if (!s.equals(firstSpeaker)){
                     english = true;
-                    break;
                 }
             }
             if (english){
