@@ -3,5 +3,6 @@ public class Problem01 {
         Canvas canvas = new Canvas();
         canvas.set(10, 10);
         canvas.show();
+        UserCommand cmd = new UserCommand();
     }
 }
