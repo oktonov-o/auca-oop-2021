@@ -22,9 +22,9 @@ public class Main {
                     sb.append(" ");
                 }
                 sb.append(s[i]);
+                System.out.println();
                 System.out.println(sb);
             }
-            System.out.println();
         }
     }
 }
