@@ -14,7 +14,10 @@ public class Main {
             } else {
                 ans.append(s);
             }
-            System.out.print(ans+" ");
+            System.out.print(ans);
+            if(i!=n-1){
+                System.out.print(" ");
+            }
         }
         System.out.println();
     }
