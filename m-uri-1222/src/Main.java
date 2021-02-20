@@ -18,7 +18,7 @@ public class Main {
                         ++lines;
                     }
                 }else if(i==n-1){
-                    lines+=2;
+                    lines++;
                 }else  {
                     chars+=s.length()+1;
                 }
