@@ -24,7 +24,8 @@ public class Main {
                     }
                 }
             }
-            if (proc > 0) clock++;
+            if (proc > 0)
+                clock++;
             System.out.println(clock);
         }
     }
