@@ -1,7 +1,5 @@
 package Problem02;
 
-import Problem02.BigRational;
-
 import java.util.Scanner;
 
 public class Problem02 {
