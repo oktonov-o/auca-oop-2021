@@ -21,12 +21,12 @@ public class Problem01 {
         while (!cmd.equals(UserCommand.EXIT)) {
             ++numOfLine;
             switch (cmd.getCommand()) {
-                case UserCommand.PEN_UP -> turtle.penUp();
-                case UserCommand.PEN_DOWN -> turtle.penDown();
-                case UserCommand.MOVE -> turtle.move(cmd.getNumOfSteps());
-                case UserCommand.PRINT -> canvas.show();
-                case UserCommand.TURN_LEFT -> turtle.turnLeft();
-                case UserCommand.TURN_RIGHT -> turtle.turnRight();
+                case UserCommand.PEN_UP : turtle.penUp();
+                case UserCommand.PEN_DOWN : turtle.penDown();
+                case UserCommand.MOVE : turtle.move(cmd.getNumOfSteps());
+                case UserCommand.PRINT : canvas.show();
+                case UserCommand.TURN_LEFT : turtle.turnLeft();
+                case UserCommand.TURN_RIGHT : turtle.turnRight();
             }
             cmd = new UserCommand(inp.nextLine());
         }
