@@ -21,16 +21,16 @@ public class Problem01 {
         Rational r2 = readRational("Enter 2nd rational (EOF for exit): ");
 
         switch (operator) {
-            case "+" -> System.out.printf("%s + %s = %s%n", r1, r2, r1.add(r2));
-            case "-" -> System.out.printf("%s - %s = %s%n", r1, r2, r1.subtract(r2));
-            case "*" -> System.out.printf("%s * %s = %s%n", r1, r2, r1.multiply(r2));
-            case "/" -> System.out.printf("%s / %s = %s%n", r1, r2, r1.divide(r2));
-            case "=" -> System.out.printf("%s = %s = %s%n", r1, r2, r1.compareTo(r2) == 0);
-            case "!=" -> System.out.printf("%s != %s = %s%n", r1, r2, r1.compareTo(r2) != 0);
-            case "<" -> System.out.printf("%s < %s = %s%n", r1, r2, r1.compareTo(r2) < 0);
-            case ">" -> System.out.printf("%s > %s = %s%n", r1, r2, r1.compareTo(r2) > 0);
-            case "<=" -> System.out.printf("%s <= %s = %s%n", r1, r2, r1.compareTo(r2) <= 0);
-            case ">=" -> System.out.printf("%s >= %s = %s%n", r1, r2, r1.compareTo(r2) >= 0);
+            case "+" : System.out.printf("%s + %s = %s%n", r1, r2, r1.add(r2));
+            case "-" : System.out.printf("%s - %s = %s%n", r1, r2, r1.subtract(r2));
+            case "*" : System.out.printf("%s * %s = %s%n", r1, r2, r1.multiply(r2));
+            case "/" : System.out.printf("%s / %s = %s%n", r1, r2, r1.divide(r2));
+            case "=" : System.out.printf("%s = %s = %s%n", r1, r2, r1.compareTo(r2) == 0);
+            case "!=" : System.out.printf("%s != %s = %s%n", r1, r2, r1.compareTo(r2) != 0);
+            case "<" : System.out.printf("%s < %s = %s%n", r1, r2, r1.compareTo(r2) < 0);
+            case ">" : System.out.printf("%s > %s = %s%n", r1, r2, r1.compareTo(r2) > 0);
+            case "<=" : System.out.printf("%s <= %s = %s%n", r1, r2, r1.compareTo(r2) <= 0);
+            case ">=" : System.out.printf("%s >= %s = %s%n", r1, r2, r1.compareTo(r2) >= 0);
         }
     }
 
