@@ -1,5 +1,3 @@
-import processing.core.PApplet;
-
 public class Star {
     private float x;
     private float y;
@@ -13,7 +11,6 @@ public class Star {
     private float angle;
     private float dangle = canvas.random(0.05f, 2);
 
-    //    Constructor
     public Star(float x, float y, float r, float dx, float dy, float red, float green, float blue, Problem02 canvas) {
         if (r <= 0) {
             throw new RuntimeException("Star: negative radius");

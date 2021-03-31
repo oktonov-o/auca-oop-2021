@@ -1,7 +1,5 @@
 import processing.core.*;
 
-import javax.swing.*;
-
 public class Problem02 extends PApplet {
     Star[] stars = new Star[100];
 
@@ -26,7 +24,7 @@ public class Problem02 extends PApplet {
     }
 
     public static void main(String[] args) {
-        PApplet.main("Project02");
+        PApplet.main("Problem02");
     }
 
 }
