@@ -14,13 +14,7 @@ public class Main extends JFrame {
         mainPanel.setBackground(Color.DARK_GRAY);
         add(mainPanel, BorderLayout.CENTER);
 
-        mainPanel.addMouseMotionListener(new MouseMotionAdapter() {
-            @Override
-            public void mouseMoved(MouseEvent e) {
-
-                setTitle(e.getX() + ", " + e.getY());
-            }
-        });
+        mainPanel.addMouseMotionListener(new PanelMouseMotion());
     }
 
     public static void main(String[] args) {
@@ -30,5 +24,13 @@ public class Main extends JFrame {
         frame.setSize(600,600);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+    }
+
+    class PanelMouseMotion extends MouseMotionAdapter {
+        @Override
+        public void mouseMoved(MouseEvent e) {
+
+            setTitle(e.getX() + ", " + e.getY());
+        }
     }
 }
