@@ -12,6 +12,8 @@ public class Main extends JFrame {
 
     Main () {
         mainPanel = new CanvasPanel();
+        mainPanel.setFocusable(true);
+        mainPanel.requestFocus();
         add(mainPanel, BorderLayout.CENTER);
         mainPanel.addKeyListener(new CanvasPanelListener());
     }
@@ -19,7 +21,7 @@ public class Main extends JFrame {
     public static void main(String[] args) {
 
         Main frame = new Main();
-        frame.setTitle("Chessboard");
+        frame.setTitle("Move Robot");
         frame.setSize(600,600);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -53,7 +55,7 @@ public class Main extends JFrame {
         @Override
         public void keyPressed(KeyEvent e) {
             if (e.getKeyCode() == KeyEvent.VK_F1){
-                JOptionPane.showMessageDialog( null, "hello");
+                JOptionPane.showMessageDialog( null, "Move Robot using direction keys");
             } else if (e.getKeyCode()==KeyEvent.VK_UP){
                 game.moveUp();
             } else if (e.getKeyCode()==KeyEvent.VK_DOWN){
@@ -63,6 +65,7 @@ public class Main extends JFrame {
             } else if (e.getKeyCode()==KeyEvent.VK_LEFT){
                 game.moveLeft();
             }
+            repaint();
         }
     }
 }

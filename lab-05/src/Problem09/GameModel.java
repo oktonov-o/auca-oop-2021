@@ -18,7 +18,7 @@ public class GameModel {
         }
     }
     public void moveRight(){
-        if(col>WIDTH-1){
+        if(col<WIDTH-1){
             ++col;
         }
     }
