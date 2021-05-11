@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         Scanner inp = new Scanner(System.in);
-        int n, m;
+        int n,m;
 
         while ((n = inp.nextInt()) != 0 && (m = inp.nextInt()) != 0) {
             ArrayList<Integer> list = new ArrayList<>();
