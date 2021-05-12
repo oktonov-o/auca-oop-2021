@@ -53,6 +53,7 @@ public class Main {
             }
             System.out.println("Instancia " + inc);
             System.out.println(yes ? "SIM" : "NAO");
+            System.out.println();
         }
     }
 }
