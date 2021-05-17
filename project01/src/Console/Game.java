@@ -1,7 +1,5 @@
 package Console;
 
-import Help.Flag;
-
 import java.util.ArrayList;
 import java.util.Random;
 
